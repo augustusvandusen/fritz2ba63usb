@@ -11,9 +11,9 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # FRITZ!Box Zugangsdaten aus Umgebungsvariablen lesen
-FRITZBOX_IP = os.getenv("FRITZBOX_IP", "192.168.0.1")
-USERNAME = os.getenv("FRITZBOX_USER", "ulf")
-PASSWORD = os.getenv("FRITZBOX_PASS", "rockula21")
+FRITZBOX_IP = os.getenv("FRITZBOX_IP", "")
+USERNAME = os.getenv("FRITZBOX_USER", "")
+PASSWORD = os.getenv("FRITZBOX_PASS", "")
 DATA_FILE = "network_data.json"
 max = 4294967296
 # Verbindung zur FRITZ!Box herstellen
