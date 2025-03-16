@@ -1,5 +1,9 @@
 This is a quick hack for displaying the total up/downstream of a fritzbox
-and kind of load-bars. It needs the fritzconnection-library
+and kind of load-bars. 
+
+![image](ba63usb.png)
+
+It needs the fritzconnection-library
 
 pip install fritzconnection
 
