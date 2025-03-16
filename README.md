@@ -10,3 +10,5 @@ pip install fritzconnection
 and the VFD-WCN Library, see installation instructions:
 
 https://github.com/stephanemouton/VFD-WCN
+
+Add credentials and let it run forever (values are persisted in file). With a new month, the values are reset. 
