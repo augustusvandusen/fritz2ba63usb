@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#
 # -*- coding: utf8 -*-
 
 # VFD PoS library for WN USB using PyUSB
