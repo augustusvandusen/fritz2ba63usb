@@ -51,11 +51,15 @@ def main():
     MyVFD = factory.get_vfd_wcn()[0]
     MyVFD.clearscreen()
     MyVFD.set_charset(0x30)
-
+    
+    icon_down = (0xF2, 0x5F)
+    icon_up = (0xF3, 0x5F)
+    toggle = 0
     while True:
         n_down, n_up = get_network_data(fc)
-
+        
         if n_down and n_up:
+    
             last_d = n_down[0]
             last_u = n_up[0]
 
@@ -63,7 +67,7 @@ def main():
             u_bar = build_bar(n_up, "u")
 
             MyVFD.poscur(1, 1)
-            MyVFD.printchr(0xF2)
+            MyVFD.printchr(icon_down[toggle])
             MyVFD.poscur(1, 2)
             MyVFD.write_msg(f"{convert_bytes(last_d).rjust(10)}")
             for i, char_code in enumerate(d_bar):
@@ -71,14 +75,15 @@ def main():
                 MyVFD.printchr(char_code)
 
             MyVFD.poscur(2, 1)
-            MyVFD.printchr(0xF3)
+            MyVFD.printchr(icon_up[toggle])
             MyVFD.poscur(2, 2)
             MyVFD.write_msg(f"{convert_bytes(last_u).rjust(10)}")
             for i, char_code in enumerate(u_bar):
                 MyVFD.poscur(2, 13 + i)
                 MyVFD.printchr(char_code)
 
-        time.sleep(1)
+        toggle = 1 - toggle
+        time.sleep(0.5)
 
 if __name__ == "__main__":
     main()
