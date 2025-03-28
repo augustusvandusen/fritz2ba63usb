@@ -4,11 +4,10 @@ from fritzconnection import FritzConnection
 import time
 
 def parse_arguments():
-    """Liest die Kommandozeilenargumente."""
     parser = argparse.ArgumentParser(description="Zeigt Netzwerkdaten auf einem VFD an.")
-    parser.add_argument("--fritzbox_ip", default="", help="IP-Adresse der FRITZ!Box")
-    parser.add_argument("--username", default="", help="Benutzername für die FRITZ!Box")
-    parser.add_argument("--password", default="", help="Passwort für die FRITZ!Box")
+    parser.add_argument("--ip", default="", help="IP-Adresse der FRITZ!Box")
+    parser.add_argument("--user", default="", help="Benutzername für die FRITZ!Box")
+    parser.add_argument("--passwd", default="", help="Passwort für die FRITZ!Box")
     return parser.parse_args()
 
 def get_network_data(fc):
@@ -42,7 +41,7 @@ def main():
 
     # Verbindung zur FRITZ!Box herstellen
     try:
-        fc = FritzConnection(address=args.fritzbox_ip, user=args.username, password=args.password)
+        fc = FritzConnection(address=args.ip, user=args.user, password=args.passwd)
     except Exception as e:
         print(f"Fehler bei der Verbindung zur FRITZ!Box: {e}")
         return
