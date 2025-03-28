@@ -1,4 +1,3 @@
-from collections import deque
 from vfdwcn import *
 from vfdpos import *
 from datetime import datetime
@@ -13,8 +12,6 @@ VFDs = factory.get_vfd_wcn()
 MyVFD = VFDs[0]
 MyVFD.clearscreen()
 MyVFD.set_charset(0x30)
-load_d = deque([0x5F] * 8, maxlen = 8)
-load_u = deque([0x5F] * 8, maxlen = 8)
 
 # Empfangen: 1,1 Gbit/s
 # Senden: 56,7 Mbit/s
