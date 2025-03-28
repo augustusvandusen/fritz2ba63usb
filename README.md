@@ -11,6 +11,6 @@ and the VFD-WCN Library, see installation instructions:
 
 https://github.com/stephanemouton/VFD-WCN
 
-usage: fritz2.py --ip=<fritzbox> --user=<username> --pass=<passwd>
+usage: fritz2.py --ip=\<fritzbox\> --user=\<username\> --pass=\<passwd\>
 
 
