@@ -11,4 +11,6 @@ and the VFD-WCN Library, see installation instructions:
 
 https://github.com/stephanemouton/VFD-WCN
 
-Add credentials and let it run forever
+usage: fritz2.py --ip=<fritzbox> --user=<username> --pass=<passwd>
+
+
